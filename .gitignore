@@ -1,0 +1,15 @@
+.idea/*
+**/node_modules/*
+**/certs/*
+**/.DS_Store
+.kilo/
+test-results/
+playwright-report/
+blob-report/
+**/test-results/
+**/playwright-report/
+**/blob-report/
+tests/
+src/tests/
+src/bin/
+src/lib/

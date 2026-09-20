@@ -1,0 +1,22 @@
+{
+  "extends": ["web-recommended"],
+  "hints": {
+    "html-checker": "off",
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": ["meta[name=theme-color]"]
+      }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "-webkit-text-size-adjust",
+          "-moz-text-size-adjust",
+          "text-size-adjust"
+        ]
+      }
+    ]
+  }
+}

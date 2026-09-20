@@ -1,0 +1,17 @@
+.git
+.github
+.vscode
+node_modules
+**/node_modules
+dist/tests
+tests
+*.md
+.hintrc
+.htmlvalidate.json
+.markdownlint.yaml
+.mega-linter.yml
+.yamllint.yml
+eslint.config.js
+repomix.config.json
+src/cloudformation.yaml
+LICENSE

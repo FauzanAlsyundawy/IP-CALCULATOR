@@ -1,0 +1,578 @@
+<!doctype html>
+<!--
+ ╔══════════════════════════════════════════════════════════════════════════════╗
+ ║ DOCNOTE & FILE METADATA                                                      ║
+ ╠══════════════════════════════════════════════════════════════════════════════╣
+ ║ File        : dist/404.html                                                  ║
+ ║ Application : Visual Subnet Calculator (v1.4.3)                              ║
+ ║ Description : 404 Not Found Page with Navigation & Quick Recovery Actions    ║
+ ║ Author      : HARRY DERTIN SUTISNA ALSYUNDAWY (@alsyundawy)                  ║
+ ║ Organization: ALSYUNDAWY IT SOLUTION (https://alsyundawy.com)                ║
+ ║ Contact     : Email: alsyundawy@gmail.com | Telegram: https://t.me/alsyundawy║
+ ║ Social / Dev: GitHub: https://github.com/alsyundawy | X: @alsyundawy         ║
+ ║ Repository  : https://github.com/alsyundawy/visualsubnetcalc                 ║
+ ║ Live Demo   : https://alsyundawy.github.io/visualsubnetcalc/                 ║
+ ║ Version     : 1.4.3 (Hardened 2026 Release)                                  ║
+ ║ Date        : September 18, 2026                                             ║
+ ║ License     : MIT License                                                    ║
+ ╚══════════════════════════════════════════════════════════════════════════════╝
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <script>
+      (function () {
+        var t = "dark";
+        try {
+          var s =
+            localStorage.getItem("site-theme") || localStorage.getItem("theme");
+          if (s === "dark" || s === "light") {
+            t = s;
+          }
+        } catch (e) {}
+        document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.setAttribute("data-bs-theme", t);
+      })();
+    </script>
+
+    <title>404 - Page Not Found | Visual Subnet Calculator</title>
+    <meta
+      name="description"
+      content="Page not found. Return to the Visual Subnet Calculator — a free tool to visually split and join IPv4 &amp; IPv6 subnets with CIDR notation and multi-cloud IP reservation support."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <!-- ═══ Icons & Favicons (alsyundawy.com suite) ═════════════════════ -->
+    <link rel="icon" type="image/svg+xml" href="icon/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="icon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="icon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="icon/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icon/apple-touch-icon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="icon/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="icon/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="icon/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="icon/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="icon/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="icon/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="icon/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="icon/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="icon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="icon/android-chrome-512x512.png"
+    />
+    <link rel="manifest" href="icon/site.webmanifest" />
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#004499" />
+    <meta name="msapplication-TileImage" content="icon/mstile-144x144.png" />
+    <meta name="msapplication-config" content="icon/browserconfig.xml" />
+    <meta name="theme-color" content="#0f172a" />
+    <!-- ═══ Typography ═══════════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container-xxl mt-2">
+      <header
+        class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2"
+        id="app_header"
+      >
+        <h1
+          class="mb-0 d-inline-flex align-items-center flex-wrap gap-2 app-title"
+        >
+          <i
+            class="fa-solid fa-network-wired text-primary"
+            aria-hidden="true"
+          ></i>
+          <span class="app-title-text">Visual Subnet Calculator</span>
+          <span
+            class="badge bg-primary text-white rounded-pill px-2.5 py-1 fs-6 fw-bold fork-badge"
+            >Fork</span
+          >
+          <span class="text-secondary fs-5 fw-medium"
+            >| 404 - Page Not Found</span
+          >
+        </h1>
+        <div class="d-flex align-items-center gap-2" id="navigation">
+          <button
+            type="button"
+            id="themeToggle"
+            class="theme-toggle nav-action-btn"
+            aria-label="Toggle dark/light mode"
+            title="Toggle dark/light mode"
+          >
+            <i id="themeIcon" class="fa-regular fa-sun" aria-hidden="true"></i>
+          </button>
+          <a
+            href="https://github.com/alsyundawy/visualsubnetcalc"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            title="GitHub Repository"
+            class="nav-action-btn"
+          >
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      </header>
+      <div class="mb-4 mt-4">
+        <a href="/" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-house me-2" aria-hidden="true"></i>Return to
+          Homepage
+        </a>
+      </div>
+      <p class="text-muted">
+        If you believe this is an error, please
+        <a
+          href="https://github.com/alsyundawy/visualsubnetcalc/issues"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fa-solid fa-circle-exclamation me-1" aria-hidden="true"></i
+          >open an issue</a
+        >
+        on GitHub.
+      </p>
+
+      <!-- ═══ Elegant Maintainer & Contact Footer ═════════════════════════ -->
+      <footer id="app_footer" class="mt-5 pt-4 pb-4 border-top">
+        <div class="row align-items-center gy-3 text-muted small">
+          <div class="col-12 col-md-4 text-center text-md-start">
+            <div
+              class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mb-1"
+            >
+              <i
+                class="fa-solid fa-network-wired text-primary fs-5"
+                aria-hidden="true"
+              ></i>
+              <span class="fw-bold fs-6 app-footer-title"
+                >Visual Subnet Calculator</span
+              >
+              <span
+                class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill fork-version-badge"
+                >Fork v1.4.3</span
+              >
+            </div>
+            <p class="mb-0 text-secondary">
+              Visual IPv4 &amp; IPv6 subnet calculator with CIDR hierarchy,
+              split/join, and shareable URL.
+            </p>
+          </div>
+          <div class="col-12 col-md-4 text-center">
+            <div class="mb-2">
+              <span>Maintained &amp; Engineered by </span>
+              <a
+                href="https://github.com/alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="fw-semibold text-primary text-decoration-none"
+                >HARRY DERTIN SUTISNA (@alsyundawy)</a
+              >
+              <div class="mt-1">
+                <a
+                  href="https://alsyundawy.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="badge bg-light text-dark border rounded-pill px-2 py-1 text-decoration-none fw-medium"
+                >
+                  <i
+                    class="fa-solid fa-globe text-primary me-1"
+                    aria-hidden="true"
+                  ></i
+                  >ALSYUNDAWY IT SOLUTION
+                </a>
+              </div>
+            </div>
+            <!-- ═══ Visitor Counter Button (Dynamic via counter.txt) ═════════ -->
+            <div class="footer-counter-wrap d-flex justify-content-center">
+              <button
+                type="button"
+                class="footer-social-btn footer-btn btn-counter"
+                id="visitor_counter_btn"
+                aria-label="Visitor Counter"
+                title="Visitor Counter (Synced with counter.txt)"
+              >
+                <i class="fa-solid fa-users" aria-hidden="true"></i
+                ><span
+                  >Visitors: <strong id="visitor_count_val">1,248</strong></span
+                >
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 text-center text-md-end">
+            <div
+              class="d-flex justify-content-center justify-content-md-end align-items-center gap-2 mb-1 flex-wrap"
+            >
+              <a
+                href="https://github.com/alsyundawy/visualsubnetcalc"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-secondary text-decoration-none footer-link"
+              >
+                <i class="fa-solid fa-code-branch me-1" aria-hidden="true"></i
+                >Source Code
+              </a>
+              <span>&bull;</span>
+              <a
+                href="https://github.com/alsyundawy/visualsubnetcalc/releases"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-secondary text-decoration-none footer-link"
+              >
+                <i class="fa-solid fa-tag me-1" aria-hidden="true"></i>Release
+                v1.4.3
+              </a>
+              <span>&bull;</span>
+              <a
+                href="https://github.com/alsyundawy/visualsubnetcalc/blob/main/LICENSE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-secondary text-decoration-none footer-link"
+              >
+                <i
+                  class="fa-solid fa-scale-balanced me-1"
+                  aria-hidden="true"
+                ></i
+                >MIT License
+              </a>
+            </div>
+          </div>
+
+          <!-- ═══ Circular Social Media Icons Row (Below Zero cookies text) ═══ -->
+          <div
+            class="col-12 text-center mt-2 pt-2 border-top border-secondary border-opacity-10"
+          >
+            <p class="mb-2 text-secondary small">
+              Zero cookies &bull; Zero tracking &bull; Pure client-side
+              computation
+            </p>
+            <div
+              class="footer-social-group d-flex justify-content-center align-items-center gap-2 flex-wrap"
+              id="footer_social_links"
+            >
+              <a
+                href="https://github.com/alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-github"
+                aria-label="Maintainer Profile (@alsyundawy)"
+                title="GitHub Profile (@alsyundawy)"
+              >
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-linkedin"
+                aria-label="LinkedIn Profile (@alsyundawy)"
+                title="LinkedIn Profile (@alsyundawy)"
+              >
+                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://x.com/alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-x"
+                aria-label="X (Twitter) Profile"
+                title="X (Twitter) Profile (@alsyundawy)"
+              >
+                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://facebook.com/alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-facebook"
+                aria-label="Facebook Profile (@alsyundawy)"
+                title="Facebook Profile (@alsyundawy)"
+              >
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://instagram.com/harry.ds.alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-instagram"
+                aria-label="Instagram Profile (@harry.ds.alsyundawy)"
+                title="Instagram Profile (@harry.ds.alsyundawy)"
+              >
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://youtube.com/@alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-youtube"
+                aria-label="YouTube Channel (@alsyundawy)"
+                title="YouTube Channel (@alsyundawy)"
+              >
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://tiktok.com/@alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-tiktok"
+                aria-label="TikTok Profile (@alsyundawy)"
+                title="TikTok Profile (@alsyundawy)"
+              >
+                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://threads.net/@harry.ds.alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-threads"
+                aria-label="Threads Profile (@harry.ds.alsyundawy)"
+                title="Threads Profile (@harry.ds.alsyundawy)"
+              >
+                <i class="fa-brands fa-threads" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://discord.com/users/alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-discord"
+                aria-label="Discord Profile (@alsyundawy)"
+                title="Discord Profile (@alsyundawy)"
+              >
+                <i class="fa-brands fa-discord" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://t.me/alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-telegram"
+                aria-label="Telegram Profile"
+                title="Telegram Contact (@alsyundawy)"
+              >
+                <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://wa.me/6285658515212"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-whatsapp"
+                aria-label="WhatsApp Contact"
+                title="Direct WhatsApp Contact"
+              >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              </a>
+              <a
+                href="mailto:alsyundawy@gmail.com"
+                class="footer-social-btn footer-btn btn-email"
+                aria-label="Email Maintainer"
+                title="Send Email to Maintainer"
+              >
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://alsyundawy.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-website"
+                aria-label="ALSYUNDAWY IT SOLUTION Website"
+                title="ALSYUNDAWY IT SOLUTION Official Website"
+              >
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://paypal.me/alsyundawy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-btn footer-btn btn-paypal"
+                aria-label="Donate via PayPal"
+                title="Support via PayPal"
+              >
+                <i class="fa-brands fa-paypal" aria-hidden="true"></i>
+              </a>
+              <button
+                type="button"
+                class="footer-social-btn footer-btn btn-qris"
+                data-bs-toggle="modal"
+                data-bs-target="#qrisModal"
+                aria-label="QRIS Donation Support"
+                title="QRIS Donation Support (Scan QR)"
+              >
+                <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- ═══ QRIS Support & Donation Modal ═════════════════════════════ -->
+      <div
+        class="modal fade"
+        id="qrisModal"
+        tabindex="-1"
+        aria-labelledby="qrisModalLabel"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-center">
+            <div class="modal-header border-0 pb-0">
+              <h5
+                class="modal-title fw-bold text-dark w-100 text-center"
+                id="qrisModalLabel"
+              >
+                <i
+                  class="fa-solid fa-qrcode text-danger me-2"
+                  aria-hidden="true"
+                ></i
+                >QRIS Donation Support
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-4">
+              <p class="text-secondary small mb-3">
+                Scan the following QRIS barcode using any supported mobile
+                banking or digital wallet app (GoPay, OVO, DANA, LinkAja, BCA,
+                Mandiri). Thank you for your support and appreciation! 🙏
+              </p>
+              <div
+                class="p-2 border rounded bg-light d-inline-block shadow-sm mb-3"
+              >
+                <img
+                  src="https://github.com/user-attachments/assets/a0126f28-6dde-43da-ba14-d7c9a27de0df"
+                  alt="QRIS Alsyundawy Donation"
+                  class="img-fluid rounded"
+                  width="280"
+                />
+              </div>
+              <div class="small text-muted">
+                <strong>Beneficiary:</strong> ALSYUNDAWY / HARRY DERTIN
+                SUTISNA<br />
+                NMID: ID1020021153676 / QRIS National Payment Standard
+              </div>
+            </div>
+            <div class="modal-footer border-0 pt-0 justify-content-center">
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm rounded-pill px-4"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <a
+                href="https://github.com/user-attachments/assets/a0126f28-6dde-43da-ba14-d7c9a27de0df"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline-danger btn-sm rounded-pill px-3"
+              >
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square me-1"
+                  aria-hidden="true"
+                ></i
+                >Open Original Image
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ Back to Top Floating Button ══════════════════════════════════ -->
+      <button
+        type="button"
+        id="btn_scroll_top"
+        class="btn-scroll-top"
+        aria-label="Back to top"
+        title="Back to top"
+      >
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </button>
+
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"
+        integrity="sha384-INLNT6YPpjCRFM2xpOexEE3T4i2mIigf+Kr19b7a59RFtrVBZQzZWXkGuiMA/q1r"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/additional-methods.min.js"
+        integrity="sha384-YJxXUyJ0BogsbWMDJj4h3uJVyImZsAI6qh7MG2LGgxMstOXB8G1mNwaRuL4A6VYb"
+        crossorigin="anonymous"
+      ></script>
+      <script src="js/lz-string.min.js"></script>
+      <script src="js/main.js"></script>
+    </div>
+  </body>
+</html>
