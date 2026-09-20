@@ -2,11 +2,11 @@
   "name": "visualsubnetcalc-root",
   "private": true,
   "type": "module",
-  "standard": {
-    "ignore": [
-      "dist/**",
-      "src/**",
-      "eslint.config.js"
-    ]
+  "scripts": {
+    "build": "echo 'Ready'",
+    "start": "npx -y serve dist -l 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
   }
 }
